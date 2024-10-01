@@ -1,0 +1,181 @@
+@import url(vars.css);
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@keyframes rotar {
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(360deg);
+
+    }
+}
+@keyframes wrong {
+    from{
+        border-color: gray;
+
+    }
+    to{
+        border-color: red;
+    }
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    transition: 0.5s background-color ease;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 0.5rem;
+    letter-spacing: 3px;
+}
+
+#message{
+    padding: 1rem;
+    background-color: var(--message-bg);
+    border-radius: 10px;
+    color: var(--body-color);
+    position: absolute;
+    margin: 5rem;
+    text-align: center;
+    z-index: -10;
+    opacity: 0;
+    border: 2px solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.5s ease;
+}
+
+#themeBtn{
+    position: absolute;
+    left: -3rem;
+    background-color: var(--body-bg) !important;
+    border: none;
+    font-size: x-large;
+    border-radius: 10px;
+}
+
+#newGameBtn{
+    position: absolute;
+    right: -3rem;
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    border: none;
+    font-size: x-large;
+    border-radius: 100%; 
+    font-weight: bolder;
+    color: white;
+    
+}
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+}
+
+span{
+    width: 80%;
+    height: 2px;
+    background-color: slategray;
+    margin: 0.5rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+
+    & div{
+        width: 50px;
+        height: 50px;
+        margin: 2px;
+        border: 1px solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2rem;
+        user-select: none;
+    }
+}
+
+
+#selectedTile{
+    border-color: lightskyblue;
+}
+
+section{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & button{
+        border-radius: 5px;
+        font-weight: 800;
+        min-width: 40px;
+        height: 50px;
+        border: 1px solid gray;
+        margin: 2px;
+        background-color: #ccc;
+        transition: 0.2s linear all;
+        user-select: none;
+    
+        &:active{
+            scale: 0.8;
+            transition: 0.2s linear all;
+    
+        }
+    }
+}
+
+
+@media screen and (max-width:450px){
+    section{
+        width: 100vw;
+    }
+    
+    section button{
+        min-width: 8vw;
+    }
+
+    .row div{
+        width: 18vw;
+        height: 18vw;
+        margin: 3px;
+    }
+
+
+
+}
+
+.wrong{
+    background-color: #222;
+    color: white;
+}
+
+.correct{
+    background-color: green;
+    color: white;
+
+}
+.misplaced{
+    background-color: orange;
+    color: white;
+}
+

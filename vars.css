@@ -1,0 +1,12 @@
+:root{
+    --body-bg:wheat;
+    --body-color:black;
+    --message-bg:lightgreen;
+}
+
+[data-theme="dark"]{
+    --body-bg:#111;
+    --body-color:white;
+    --message-bg:#000050;
+
+}
